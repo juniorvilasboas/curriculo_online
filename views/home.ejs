@@ -35,20 +35,57 @@
                 </div>
             </div>
             <div class="content">
-                <div class="lbl_topic">Nome civil</div>
-                <hr>
-                <p><b>Nome:</b> <%- user.name %></p>
-                <div class="lbl_topic">Dados pessoais</div>
-                <hr>
-                <p>Filiação: <%- dados.pai || "não identificado" %> e <%- dados.mae %></p>
-                <p>Nascimento: <%- dados.data_nasc %></p>
-                <p>Identidade: <%- dados.rg %></p>
-                <p>CPF: <%- dados.cpf %></p>
-                <div class="lbl_topic">Formação acadêmica/titulação</div>
-                <hr>
-                <% academics.forEach( academic => { %>
-                    <p><b><%- academic.inicio %>-<%- academic.fim || "Atual" %></b> <%- academic.descricao %></p>
-                <% }) %>
+                <table class="dados">
+                    <div class="lbl_topic">Nome civil</div>
+                    <hr>
+                    <tr>
+                        <th>Nome</th>
+                        <td style="width: 10px"></td>
+                        <td><%- user.name %></td>
+                    </tr>
+                </table>
+                <table class="dados">
+                    <div class="lbl_topic">Dados pessoais</div>
+                    <hr>
+                    <tr>
+                        <th>Filiação</th>
+                        <td style="width: 10px"></td>
+                        <td><%- dados.pai || "não identificado" %> e <%- dados.mae %></td>
+                    </tr>
+                    <tr>
+                        <th>Nascimento</th>
+                        <td style="width: 10px"></td>
+                        <td><%- dados.data_nasc %></td>
+                    </tr>
+                    <tr>
+                        <th>Carteira de Identidade</th>
+                        <td style="width: 10px"></td>
+                        <td><%- dados.rg %></td>
+                    </tr>
+                    <tr>
+                        <th>CPF</th>
+                        <td style="width: 10px"></td>
+                        <td><%- dados.cpf %></td>
+                    </tr>
+                    <tr>
+                        <th>Endereço eletrônico</th>
+                        <td style="width: 10px"></td>
+                        <td><%- dados.email %></td>
+                    </tr>
+                </table>
+                <table class="dados">
+                    <div class="lbl_topic">Formação acadêmica/titulação</div>
+                    <hr>
+                    <% academics.forEach( academic => { %>
+                        <tr>
+                            <th rowspan="3"><%- academic.inicio %>-<%- academic.fim || "Atual" %></th>
+                            <td rowspan="3" style="width: 10px"></td>
+                            <td><%- academic.descricao %></td>
+                            <tr></tr>
+                            <td><%- academic.instituicao %></td>
+                        </tr>
+                    <% }) %>
+                </table>
             </div>
         </div>
     </body>

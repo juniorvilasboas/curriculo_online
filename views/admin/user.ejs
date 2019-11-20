@@ -1,0 +1,24 @@
+<%- include('header') %>
+    <h3>Gerenciador de usuários: <a href="/admin/users/novo">Novo</a></h3>
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="width: 10px" scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach( user => { %>
+                    <tr>
+                        <th scope="row"><%= user.id %></th>
+                        <td><%= user.name %></td>
+                        <td>
+                            <a href="/admin/users/editar/<%= user.id %>">Editar</a>
+                            <a href="/admin/users/delete/<%= user.id %>">Excluir</a>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+<%- include('footer') %>

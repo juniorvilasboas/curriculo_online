@@ -13,7 +13,7 @@ ul {
     padding-left: 20px;
 }
 
-p {
+content p {
     margin-left: 50px;
 }
 
@@ -38,4 +38,19 @@ p {
 
 .content {
     padding: 30px;
+}
+
+.dados {
+    border-collapse: separate;
+    font-size: 13px;
+    margin: -15px 0 0 0;
+}
+
+.dados th {
+    text-align: right;
+    width: 100px;
+}
+
+.dados td {
+    vertical-align: top;
 }

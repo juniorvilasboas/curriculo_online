@@ -10,6 +10,7 @@ const dbConnection = sqlite.open(path.resolve(__dirname, 'curriculo.sqlite'), { 
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', async(req, res) => {
     const db = await dbConnection
@@ -26,6 +27,54 @@ app.get('/', async(req, res) => {
 
 app.get('/admin', (req, res) => {
     res.render('admin/home')
+})
+
+app.get('/admin/users', async(req, res) => {
+    const db = await dbConnection
+    const users = await db.all('select * from users')
+
+    res.render('admin/user', {
+        users
+    })
+})
+
+app.get('/admin/users/novo', async(req, res) => {
+
+    res.render('admin/user-novo')
+})
+
+app.post('/admin/users/novo', async(req, res) => {
+    const { name, resume } = req.body
+    const db = await dbConnection
+    await db.run(`insert into users(name, resume, data_modify) values('${name}', '${resume}', '${Date()}')`)
+
+    res.redirect('/admin/users')
+})
+
+app.get('/admin/users/editar/:id', async(req, res) => {
+    const db = await dbConnection
+    const user = await db.get('select * from users where id = ' + req.params.id)
+
+    res.render('admin/user-editar', {
+        user
+    })
+})
+
+app.post('/admin/users/editar/:id', async(req, res) => {
+    const { name, resume } = req.body
+    const { id } = req.params
+    const db = await dbConnection
+    await db.run(`update users set name = '${name}', resume = '${resume}' where id = '${id}'`)
+
+    res.redirect('/admin/users')
+})
+
+app.get('/admin/users/delete/:id', async(req, res) => {
+    const { id } = req.params
+    const db = await dbConnection
+    await db.run(`delete from users where id = '${id}'`)
+
+    res.redirect('/admin/users')
 })
 
 const init = async() => {

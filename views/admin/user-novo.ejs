@@ -1,0 +1,16 @@
+<%- include('header') %>
+    <h3>Usuários novo: <a href="/admin/users">Voltar</a></h3>
+    <form method="POST">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Nome do usuário" name="name">
+        </div>
+        <div class="form-group">
+            <label for="resume">Resumo:</label>
+            <textarea class="form-control" id="resume" rows="3" name="resume"></textarea>
+        </div>
+        <div class="from-group">
+            <button class="btn btn-primary">Cadastrar Usuário</button>
+        </div>
+    </form>
+<%- include('footer') %>
