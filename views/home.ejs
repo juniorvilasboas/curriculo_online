@@ -12,9 +12,6 @@
             <div style="height: 4px; width: 1650px"></div>
             <div class="collapse navbar-collapse" id="navbarNav" style="float: right">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/admin">Admin</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -24,14 +21,16 @@
                 <div style="height: 140px">
                     <img class="foto" src="/images/foto.jpg"/>
                     <div>
-                        <h4><%- user.name %></h4>
-                        Última atualização do currículo em <%- user.data_modify %>
+                        <h4>Moacyr Simplicio Santana Junior</h4>
+                        Última atualização do currículo em 20/11/2019
                     </div>
                 </div>
                 <div>
                     <span class="lbl_topic">Resumo</span>
                     <hr>
-                    <%- user.resume %>
+                    Graduado em ciência da computação em 2014, logo após passei no concurso para professor do estado,
+                    ministrando (Redes, Banco de dados, Analise e projetos de sistemas).
+                    Engajado no curso Fullstack máster para uma colocação no mercado de trabalho remoto.
                 </div>
             </div>
             <div class="content">
@@ -41,50 +40,77 @@
                     <tr>
                         <th>Nome</th>
                         <td style="width: 10px"></td>
-                        <td><%- user.name %></td>
+                        <td>Moacyr Simplicio Santana Junior</td>
                     </tr>
                 </table>
                 <table class="dados">
                     <div class="lbl_topic">Dados pessoais</div>
                     <hr>
                     <tr>
-                        <th>Filiação</th>
-                        <td style="width: 10px"></td>
-                        <td><%- dados.pai || "não identificado" %> e <%- dados.mae %></td>
-                    </tr>
-                    <tr>
                         <th>Nascimento</th>
                         <td style="width: 10px"></td>
-                        <td><%- dados.data_nasc %></td>
-                    </tr>
-                    <tr>
-                        <th>Carteira de Identidade</th>
-                        <td style="width: 10px"></td>
-                        <td><%- dados.rg %></td>
-                    </tr>
-                    <tr>
-                        <th>CPF</th>
-                        <td style="width: 10px"></td>
-                        <td><%- dados.cpf %></td>
+                        <td>22/07/1982 - Feira de Santana/BA - Brasil</td>
                     </tr>
                     <tr>
                         <th>Endereço eletrônico</th>
                         <td style="width: 10px"></td>
-                        <td><%- dados.email %></td>
+                        <td>junior.vilasboas@gmail.com</td>
                     </tr>
                 </table>
                 <table class="dados">
                     <div class="lbl_topic">Formação acadêmica/titulação</div>
                     <hr>
-                    <% academics.forEach( academic => { %>
                         <tr>
-                            <th rowspan="3"><%- academic.inicio %>-<%- academic.fim || "Atual" %></th>
+                            <th rowspan="3">2010-2014</th>
                             <td rowspan="3" style="width: 10px"></td>
-                            <td><%- academic.descricao %></td>
+                            <td>Ciência da Computação</td>
                             <tr></tr>
-                            <td><%- academic.instituicao %></td>
+                            <td>Universidade Salvador - UNIFACS, Salvador/BA, Brasil</td>
                         </tr>
-                    <% }) %>
+                        <tr>
+                            <th rowspan="3">2000-2003</th>
+                            <td rowspan="3" style="width: 10px"></td>
+                            <td>2º grau</td>
+                            <tr></tr>
+                            <td>Colegio Estadual Yêda Barradas Carneiro, Feira de Santana/BA, Brasil</td>
+                        </tr>
+                </table>
+                <table class="dados">
+                    <div class="lbl_topic">Formação complementar</div>
+                    <hr>
+                        <tr>
+                            <th rowspan="3">2019-atual</th>
+                            <td rowspan="3" style="width: 10px"></td>
+                            <td>Fullstack Master</td>
+                            <tr></tr>
+                            <td>DevPleno, Pouso Alegre/MG, Brasil</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="3">2019-2019</th>
+                            <td rowspan="3" style="width: 10px"></td>
+                            <td>Projetos de sistemas de TI. (Carga horária: 15h)</td>
+                            <tr></tr>
+                            <td>Fundação Bradesco, Osasco/SP, Brasil</td>
+                        </tr>
+                </table>
+                <table class="dados">
+                    <div class="lbl_topic">Idiomas</div>
+                    <hr>
+                        <tr>
+                            <th>Espanhol</th>
+                            <td style="width: 10px"></td>
+                            <td>Compreende Razoavelmente, Fala Pouco, Escreve Pouco, Lê Razoavelmente</td>
+                        </tr>
+                        <tr>
+                            <th>Inglês</th>
+                            <td style="width: 10px"></td>
+                            <td>Compreende Razoavelmente, Fala Pouco, Escreve Razoavelmente, Lê Razoavelmente</td>
+                        </tr>
+                        <tr>
+                            <th>Português</th>
+                            <td style="width: 10px"></td>
+                            <td>Compreende Bem, Fala Bem, Escreve Bem, Lê Bem</td>
+                        </tr>
                 </table>
             </div>
         </div>

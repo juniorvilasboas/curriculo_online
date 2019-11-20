@@ -51,6 +51,10 @@ content p {
     width: 100px;
 }
 
+.dados th {
+    vertical-align: top;
+}
+
 .dados td {
     vertical-align: top;
 }
