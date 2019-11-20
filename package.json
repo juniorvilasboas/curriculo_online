@@ -1,0 +1,29 @@
+{
+  "name": "curriculo_online",
+  "version": "1.0.0",
+  "description": "Curriculo online para facilitar divulgação digital",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juniorvilasboas/curriculo_online.git"
+  },
+  "keywords": [
+    "curriculo",
+    "job"
+  ],
+  "author": "Moacyr Santana",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juniorvilasboas/curriculo_online/issues"
+  },
+  "homepage": "https://github.com/juniorvilasboas/curriculo_online#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "sqlite": "^3.0.3"
+  }
+}
