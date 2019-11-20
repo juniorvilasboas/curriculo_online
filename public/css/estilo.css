@@ -8,11 +8,17 @@ hr {
     margin-top: 0px;
 }
 
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
 p {
     margin-left: 50px;
 }
 
 .foto {
+    border-radius: 10px;
     float: left;
     height: 110px;
     margin-right: 20px;
